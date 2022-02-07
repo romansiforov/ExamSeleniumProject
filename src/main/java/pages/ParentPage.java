@@ -9,7 +9,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 public abstract class ParentPage {
     Logger logger = Logger.getLogger(getClass());
@@ -55,6 +57,36 @@ public abstract class ParentPage {
             stopTest(e);
         }
     }
+
+     protected void fillTextIntoInput(WebElement webElement, String text){
+        try{
+            webDriverWait5.until(ExpectedConditions.visibilityOf(webElement));
+            webElement.clear();
+            webElement.sendKeys(text);
+            logger.info(text+" has been entered into Email input");
+        }catch (Exception e){
+            stopTest(e);
+        }
+     }
+
+    protected void selectValue(WebElement dayOfBirthSelectCreateAccountForm, String value) {
+        try{
+            Select select = new Select(dayOfBirthSelectCreateAccountForm);
+            select.selectByVisibleText(value);
+        }catch(Exception e){
+            stopTest(e);
+        }
+    }
+
+    protected void checkTheCheckBox(WebElement webElement) {
+        try{
+            webDriverWait5.until(ExpectedConditions.elementToBeClickable(webElement));
+            webElement.click();
+        }catch (Exception e){
+            stopTest(e);
+        }
+    }
+
 
     private void stopTest(Exception e) {
         logger.info("Can not work with element");

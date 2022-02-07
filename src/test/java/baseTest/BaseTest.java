@@ -9,6 +9,7 @@ import org.junit.rules.TestName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import pages.HomePage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,6 +19,7 @@ import static pages.ParentPage.configProperties;
 public class BaseTest {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
+    HomePage homePage;
 
     @Before
     public void tearUp() {
@@ -26,6 +28,7 @@ public class BaseTest {
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
         logger.info("Browser has been opened");
+        homePage = new HomePage(webDriver);
     }
 
     @After
