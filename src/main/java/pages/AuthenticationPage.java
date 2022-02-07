@@ -16,6 +16,15 @@ public class AuthenticationPage extends HeaderAndNavBarPage{
     @FindBy(xpath = ".//button[@id='SubmitCreate']")
     private WebElement createAccountButton;
 
+    @FindBy(xpath = ".//input[@id='email']")
+    private WebElement emailLogInInput;
+
+    @FindBy(xpath = ".//input[@id='passwd']")
+    private WebElement passwordLogInInput;
+
+    @FindBy(xpath = ".//button[@id='SubmitLogin']")
+    private WebElement signInLogInButton;
+
     public AuthenticationPage(WebDriver webDriver) {
         super(webDriver);
     }

@@ -47,6 +47,9 @@ public class RegistrationPage extends HeaderAndNavBarPage {
     @FindBy(xpath = ".//button[@id='submitAccount']")
     private WebElement registerButton;
 
+    @FindBy(xpath = ".//input[@id='id_gender1']")
+    private WebElement maleRadioButton;
+
 
     public RegistrationPage(WebDriver webDriver) {
         super(webDriver);
@@ -92,22 +95,22 @@ public class RegistrationPage extends HeaderAndNavBarPage {
         return this;
     }
 
-    public RegistrationPage checkNewsSignificationCheckBox(){
+    public RegistrationPage checkNewsSignificationCheckBox() {
         checkTheCheckBox(newsSubscriptionCheckBoxCreateAccountForm);
         return this;
     }
 
-    public RegistrationPage checkSpecialOffersCheckBox(){
+    public RegistrationPage checkSpecialOffersCheckBox() {
         checkTheCheckBox(specialOffersCheckBoxCreateAccountForm);
         return this;
     }
 
+    //TO DO
     public RegistrationPage setGender(Gender gender) {
-        //  selectGender(gender);
         return this;
     }
 
-    public MyAccountPage clickRegisterButton(){
+    public MyAccountPage clickRegisterButton() {
         clickOnElement(registerButton);
         return new MyAccountPage(webDriver);
     }
