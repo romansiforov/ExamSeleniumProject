@@ -9,6 +9,9 @@ public class MyAccountPage extends ParentPage{
     @FindBy(xpath = ".//*[contains(p,'Your account has been created.')]")
     private WebElement createdAccountSuccessText;
 
+    @FindBy(xpath = ".//*[@class='page-heading']")
+    private WebElement myAccountHeading;
+
     public MyAccountPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -24,6 +27,7 @@ public class MyAccountPage extends ParentPage{
     }
 
     public MyAccountPage checkCreatedAccountSuccessMessage(){
+        waitForElement(myAccountHeading);
         Assert.assertTrue("The success text isn't displayed", elementIsVisible(createdAccountSuccessText));
         return this;
     }

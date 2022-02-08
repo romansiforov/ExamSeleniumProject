@@ -50,9 +50,9 @@ public abstract class ParentPage {
 
     protected void clickOnElement(WebElement webElement){
         try{
-            webDriverWait5.until(ExpectedConditions.visibilityOf(webElement));
+            webDriverWait5.until(ExpectedConditions.elementToBeClickable(webElement));
             webElement.click();
-            logger.info("The element "+webElement.getText()+" has been clicked");
+            logger.info("The element has been clicked");
         }catch (Exception e){
             stopTest(e);
         }
@@ -80,7 +80,6 @@ public abstract class ParentPage {
 
     protected void checkTheCheckBox(WebElement webElement) {
         try{
-            webDriverWait5.until(ExpectedConditions.elementToBeClickable(webElement));
             webElement.click();
         }catch (Exception e){
             stopTest(e);

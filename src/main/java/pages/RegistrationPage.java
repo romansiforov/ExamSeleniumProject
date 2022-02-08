@@ -45,7 +45,7 @@ public class RegistrationPage extends HeaderAndNavBarPage {
     @FindBy(xpath = ".//*[@class='radio']")
     private WebElement sexCreateAccountForm;
 
-    @FindBy(xpath = ".//button[@id='submitAccount']")
+    @FindBy(xpath = ".//button[@name='submitAccount']")
     private WebElement registerButton;
 
     @FindBy(xpath = ".//input[@id='id_gender1']")
