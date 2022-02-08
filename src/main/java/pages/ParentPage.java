@@ -30,7 +30,7 @@ public abstract class ParentPage {
 
     abstract String getRelativeUrl();
 
-    protected void checkUrl(){
+    public void checkUrl(){
         Assert.assertEquals("Invalid page", configProperties.base_url()+getRelativeUrl(),webDriver.getCurrentUrl());
     }
 

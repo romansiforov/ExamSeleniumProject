@@ -19,7 +19,7 @@ import static pages.ParentPage.configProperties;
 public class BaseTest {
     WebDriver webDriver;
     Logger logger = Logger.getLogger(getClass());
-    HomePage homePage;
+    protected HomePage homePage;
 
     @Before
     public void tearUp() {
