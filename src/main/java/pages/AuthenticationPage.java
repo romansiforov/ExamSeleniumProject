@@ -39,8 +39,9 @@ public class AuthenticationPage extends HeaderAndNavBarPage{
         return this;
     }
 
-    public void fillEmailIntoInputCreateForm(String text){
+    public AuthenticationPage fillEmailIntoInputCreateForm(String text){
         fillTextIntoInput(createAccountEmailInput,text);
+        return this;
     }
 
     public RegistrationPage clickOnCreateAccountButton(){

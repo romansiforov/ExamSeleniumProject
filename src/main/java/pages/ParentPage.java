@@ -86,7 +86,13 @@ public abstract class ParentPage {
             stopTest(e);
         }
     }
-
+    public void waitForElement(WebElement webElement) {
+        try{
+            webDriverWait5.withMessage("Element is not visible").until(ExpectedConditions.visibilityOf(webElement));
+        }catch (Exception e){
+            stopTest(e);
+        }
+    }
 
     private void stopTest(Exception e) {
         logger.info("Can not work with element");

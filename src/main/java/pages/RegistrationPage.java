@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -49,6 +50,9 @@ public class RegistrationPage extends HeaderAndNavBarPage {
 
     @FindBy(xpath = ".//input[@id='id_gender1']")
     private WebElement maleRadioButton;
+
+    @FindBy(xpath = ".//*[@style='display: block;']/h1")
+    private WebElement createAccountForm;
 
 
     public RegistrationPage(WebDriver webDriver) {
@@ -113,6 +117,12 @@ public class RegistrationPage extends HeaderAndNavBarPage {
     public MyAccountPage clickRegisterButton() {
         clickOnElement(registerButton);
         return new MyAccountPage(webDriver);
+    }
+
+    public RegistrationPage checkIfRedirectedToRegistrationPage() {
+        waitForElement(createAccountForm);
+        Assert.assertEquals("The user hasn't been redirected to the Registration Page",baseUrl+getRelativeUrl(),webDriver.getCurrentUrl());
+        return this;
     }
 
 }
