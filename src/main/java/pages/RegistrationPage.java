@@ -5,10 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-enum Gender {
-    Male,
-    Female
-}
 
 public class RegistrationPage extends HeaderFooterAndNavBarPage {
 
