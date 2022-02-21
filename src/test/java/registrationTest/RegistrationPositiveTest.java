@@ -9,7 +9,7 @@ public class RegistrationPositiveTest extends BaseTest {
     @Test
     public void positiveRegistrationTest(){
         homePage
-                .openLoginPage()
+                .openHomePage()
                 .checkIfRedirectedToHomePage()
                 .checkIfAuthenticated();
         homePage

@@ -93,6 +93,15 @@ public abstract class ParentPage {
         }
     }
 
+    protected void selectElementFromSelect(WebElement dropDown, String item) {
+        try{
+            Select select = new Select(dropDown);
+            select.selectByVisibleText(item);
+        }catch (Exception e){
+            stopTest(e);
+        }
+    }
+
     private void stopTest(Exception e) {
         logger.info("Can not work with element");
         Assert.fail("Can not work with element" + e);

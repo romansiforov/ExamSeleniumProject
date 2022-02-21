@@ -61,7 +61,7 @@ public class RegistrationPage extends HeaderAndNavBarPage {
 
     @Override
     String getRelativeUrl() {
-        return "/authentication?back=my-account#account-creation";
+        return "/en/authentication?back=my-account#account-creation";
     }
 
     public RegistrationPage fillFirstNameIntoInput(String firstName) {

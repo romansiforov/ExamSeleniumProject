@@ -19,6 +19,9 @@ abstract public class HeaderAndNavBarPage extends ParentPage {
     @FindBy(xpath = ".//*[@id='languages-block-top']/*[@class='current']")
     private WebElement selectLanguage;
 
+    @FindBy(xpath = ".//a[@title='Contact Us']")
+    private WebElement contactUsLink;
+
     public HeaderAndNavBarPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -34,5 +37,10 @@ abstract public class HeaderAndNavBarPage extends ParentPage {
     public AuthenticationPage clickOnSignInButton() {
         clickOnElement(signInButton);
         return new AuthenticationPage(webDriver);
+    }
+
+    public ContactUsPage clickOnContactUsButton(){
+        clickOnElement(contactUsLink);
+        return new ContactUsPage(webDriver);
     }
 }

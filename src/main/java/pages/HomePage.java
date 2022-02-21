@@ -18,7 +18,7 @@ public class HomePage extends HeaderAndNavBarPage{
         return "/";
     }
 
-    public HomePage openLoginPage() {
+    public HomePage openHomePage() {
         try {
             webDriver.get(baseUrl + "/");
             logger.info("Login page has been opened");
