@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class AuthenticationPage extends HeaderAndNavBarPage{
+public class AuthenticationPage extends HeaderFooterAndNavBarPage {
 
     @FindBy(xpath = ".//h1[text()='Authentication']")
     private WebElement authenticationTitle;

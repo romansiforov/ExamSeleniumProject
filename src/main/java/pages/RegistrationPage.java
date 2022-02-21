@@ -10,7 +10,7 @@ enum Gender {
     Female
 }
 
-public class RegistrationPage extends HeaderAndNavBarPage {
+public class RegistrationPage extends HeaderFooterAndNavBarPage {
 
     @FindBy(xpath = ".//input[@id='customer_firstname']")
     private WebElement firstNameCreateAccountForm;

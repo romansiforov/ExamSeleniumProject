@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-abstract public class HeaderAndNavBarPage extends ParentPage {
+abstract public class HeaderFooterAndNavBarPage extends ParentPage {
 
     @FindBy(xpath = ".//a[@class='login']")
     private WebElement signInButton;
@@ -22,7 +22,13 @@ abstract public class HeaderAndNavBarPage extends ParentPage {
     @FindBy(xpath = ".//a[@title='Contact Us']")
     private WebElement contactUsLink;
 
-    public HeaderAndNavBarPage(WebDriver webDriver) {
+    @FindBy(xpath = ".//input[@id='newsletter-input']")
+    private WebElement newsEmailInput;
+
+    @FindBy(xpath = ".//button[@name='submitNewsletter']")
+    private WebElement submitNewSubscriptionButton;
+
+    public HeaderFooterAndNavBarPage(WebDriver webDriver) {
         super(webDriver);
     }
 
@@ -42,5 +48,15 @@ abstract public class HeaderAndNavBarPage extends ParentPage {
     public ContactUsPage clickOnContactUsButton(){
         clickOnElement(contactUsLink);
         return new ContactUsPage(webDriver);
+    }
+
+    public HeaderFooterAndNavBarPage fillEmailIntoNewsSubscriptionInput(String email){
+        fillTextIntoInput(newsEmailInput,email);
+        return this;
+    }
+
+    public HeaderFooterAndNavBarPage clickOnSubmitSubscriptionButton(){
+
+        return this;
     }
 }
