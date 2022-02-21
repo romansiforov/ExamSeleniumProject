@@ -12,5 +12,4 @@ public class TestData {
     public final static String VALID_LAST_NAME_CHARACTERS = "Siforov";
     public final static String VALID_EMAIL = "roman"+(new Date().getTime())+"@gmail.com";
     public final static String VALID_REGISTER_PASSWORD = "RomanSiforov1988";
-
 }

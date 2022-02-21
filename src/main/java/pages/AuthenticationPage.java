@@ -25,6 +25,9 @@ public class AuthenticationPage extends HeaderAndNavBarPage{
     @FindBy(xpath = ".//button[@id='SubmitLogin']")
     private WebElement signInLogInButton;
 
+    @FindBy(xpath = ".//*[@id='create_account_error']")
+    private WebElement invalidEmailErrorText;
+
     public AuthenticationPage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -47,5 +50,22 @@ public class AuthenticationPage extends HeaderAndNavBarPage{
     public RegistrationPage clickOnCreateAccountButton(){
         clickOnElement(createAccountButton);
         return new RegistrationPage(webDriver);
+    }
+
+
+    public  AuthenticationPage invalidEmailErrorMessageIsDisplayed(){
+        elementIsVisible(invalidEmailErrorText);
+        return this;
+    }
+
+    public AuthenticationPage checkErrorMessage() {
+        waitForElement(invalidEmailErrorText);
+        Assert.assertEquals("The error message is incorrect", "Invalid email address.",invalidEmailErrorText.getText());
+        return this;
+    }
+
+    public AuthenticationPage clickOnCreateAccountButtonNegativeTransition() {
+        clickOnElement(createAccountButton);
+        return this;
     }
 }
