@@ -1,7 +1,5 @@
 package libs;
 
-import org.junit.Rule;
-import org.junit.rules.TestName;
 
 import java.util.Date;
 
