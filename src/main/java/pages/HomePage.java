@@ -67,7 +67,7 @@ public class HomePage extends HeaderFooterAndNavBarPage {
     }
 
     public HomePage checkIfFailureMessageCorrectness() {
-        Assert.assertEquals("The success message is incorrect", TestData.VALID_SUCCESS_SUBSCRIPTION_TEXT, successSubscriptionText.getText().trim());
+        Assert.assertEquals("The failure message is incorrect", TestData.VALID_FAILURE_SUBSCRIPTION_TEXT, successSubscriptionText.getText().trim());
         return this;
     }
 }

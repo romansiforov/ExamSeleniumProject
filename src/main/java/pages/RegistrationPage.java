@@ -11,9 +11,6 @@ public class RegistrationPage extends HeaderFooterAndNavBarPage {
     @FindBy(xpath = ".//input[@id='customer_firstname']")
     private WebElement firstNameCreateAccountForm;
 
-    @FindBy(xpath = "")
-    private WebElement CreateAccountForm;
-
     @FindBy(xpath = ".//input[@id='customer_lastname']")
     private WebElement lastNameCreateAccountForm;
 
