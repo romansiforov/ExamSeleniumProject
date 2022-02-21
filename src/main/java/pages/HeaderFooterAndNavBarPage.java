@@ -23,10 +23,10 @@ abstract public class HeaderFooterAndNavBarPage extends ParentPage {
     private WebElement contactUsLink;
 
     @FindBy(xpath = ".//input[@id='newsletter-input']")
-    private WebElement newsEmailInput;
+    protected WebElement newsEmailInput;
 
     @FindBy(xpath = ".//button[@name='submitNewsletter']")
-    private WebElement submitNewSubscriptionButton;
+    protected WebElement submitNewSubscriptionButton;
 
     public HeaderFooterAndNavBarPage(WebDriver webDriver) {
         super(webDriver);
@@ -50,13 +50,4 @@ abstract public class HeaderFooterAndNavBarPage extends ParentPage {
         return new ContactUsPage(webDriver);
     }
 
-    public HeaderFooterAndNavBarPage fillEmailIntoNewsSubscriptionInput(String email){
-        fillTextIntoInput(newsEmailInput,email);
-        return this;
-    }
-
-    public HeaderFooterAndNavBarPage clickOnSubmitSubscriptionButton(){
-
-        return this;
-    }
 }

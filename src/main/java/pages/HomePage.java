@@ -1,5 +1,6 @@
 package pages;
 
+import libs.TestData;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,4 +41,33 @@ public class HomePage extends HeaderFooterAndNavBarPage {
         return this;
     }
 
+    public HomePage fillEmailIntoNewsSubscriptionInput(String email){
+        fillTextIntoInput(newsEmailInput,email);
+        return this;
+    }
+
+    public HomePage clickOnSubmitSubscriptionButton(){
+        clickOnElement(submitNewSubscriptionButton);
+        return this;
+    }
+
+    public HomePage checkIfSuccessMessageVisible() {
+        elementIsVisible(successSubscriptionText);
+        return this;
+    }
+
+    public HomePage checkIfFailureMessageVisible(){
+        elementIsVisible(failedSubscriptionErrorText);
+        return this;
+    }
+
+    public HomePage checkIfSuccessMessageCorrectness() {
+        Assert.assertEquals("The success message is incorrect", TestData.VALID_SUCCESS_SUBSCRIPTION_TEXT, successSubscriptionText.getText().trim());
+        return this;
+    }
+
+    public HomePage checkIfFailureMessageCorrectness() {
+        Assert.assertEquals("The success message is incorrect", TestData.VALID_SUCCESS_SUBSCRIPTION_TEXT, successSubscriptionText.getText().trim());
+        return this;
+    }
 }

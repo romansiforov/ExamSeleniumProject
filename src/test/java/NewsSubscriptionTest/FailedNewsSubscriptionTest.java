@@ -4,20 +4,20 @@ import baseTest.BaseTest;
 import libs.TestData;
 import org.junit.Test;
 
-public class SuccessNewsSubscriptionTest extends BaseTest {
+public class FailedNewsSubscriptionTest extends BaseTest {
     @Test
-    public void newSubscriptionPositiveTest() {
+    public void newSubscriptionNegativeTest() {
         homePage.openHomePage()
                 .fillEmailIntoNewsSubscriptionInput(TestData.VALID_EMAIL)
                 .clickOnSubmitSubscriptionButton()
-                .checkIfSuccessMessageVisible();
+                .checkIfFailureMessageVisible();
     }
 
     @Test
-    public void newSubscriptionSuccessTextCorrectnessTest(){
+    public void newSubscriptionFailureTextCorrectnessTest(){
         homePage.openHomePage()
                 .fillEmailIntoNewsSubscriptionInput(TestData.VALID_EMAIL)
                 .clickOnSubmitSubscriptionButton()
-                .checkIfSuccessMessageCorrectness();
+                .checkIfFailureMessageCorrectness();
     }
 }
